@@ -1,0 +1,26 @@
+# 🔍 Allure reports (résultats et HTML généré)
+allure-results/
+allure-report/
+
+# 🎥 Playwright test videos
+videos/
+
+# 🧪 Pytest cache & fichiers compilés
+__pycache__/
+*.py[cod]
+.cache/
+.pytest_cache/
+
+# 🛠️ IDE config (optionnel selon l'équipe)
+.vscode/
+.idea/
+
+# 🐍 Python virtual environments
+venv/
+.env/
+
+# 📁 Fichiers statiques temporaires (si pas versionnés volontairement)
+assets/
+
+# 📦 Trace de Playwright
+trace.zip
