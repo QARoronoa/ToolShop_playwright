@@ -1,5 +1,3 @@
-import time
-
 import allure
 from PagesProject.HomePage import HomePage
 from PagesProject.LoginPage import LoginPage

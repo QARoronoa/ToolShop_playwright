@@ -1,4 +1,4 @@
-from playwright.sync_api import Page
+from playwright.sync_api import Page, expect
 
 from PagesProject.BasePage import BasePage
 
@@ -10,6 +10,10 @@ class HomePage(BasePage):
     #locators
         self.bouton_se_connecter = self.page.locator(".nav-link").nth(3)
         self.titre_page = self.page.locator('//h1[@data-test="page-title"]')
+        self.barre_de_recherche = self.page.locator('#search-query')
+        self.bouton_rechercher = self.page.get_by_role("button", name="Rechercher ")
+        self.article_rechercher = self.page.locator('//span[normalize-space()="hammer"]')
+
 
     #methodes
 
@@ -19,3 +23,13 @@ class HomePage(BasePage):
     def verifier_redirection_vers_page_mon_compte(self):
         titre = self.capturer_du_text_du_champ(self.titre_page)
         assert titre == "Mon compte"
+
+    def saisir_un_article_dans_la_barre_de_recherche(self, article):
+        self.saisir_du_text_dans_le_champ(self.barre_de_recherche, article)
+
+    def cliquer_sur_le_bouton_rechercher(self):
+        self.cliquer_sur_un_element(self.bouton_rechercher)
+
+    def verifier_que_larticle_rechercher_est_visible(self, article):
+        expect(self.article_rechercher).to_have_text(article)
+

@@ -1,1 +1,0 @@
-{"uuid": "c43594fa-98c8-45c8-979e-8162b572b994", "children": ["ca0a7330-7581-4fad-83e3-bdfa541e2f23"], "befores": [{"name": "credentials_champs_vide", "status": "passed", "start": 1791734231723, "stop": 1791734231723}], "afters": [{"name": "credentials_champs_vide::<lambda>", "start": 1791734237908}], "start": 1791734231723, "stop": 1791734237908}
