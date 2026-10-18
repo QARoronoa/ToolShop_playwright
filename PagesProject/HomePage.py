@@ -35,3 +35,6 @@ class HomePage(BasePage):
 
     def verifier_la_presence_du_message_aucun_produit_trouve(self):
         expect(self.message_no_results).to_have_text("Aucun produit trouvé.")
+
+    def ouvrir_fiche_produit(self, article):
+        self.page.locator('.card-body', has_text=article).click()
