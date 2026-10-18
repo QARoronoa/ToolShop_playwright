@@ -5,7 +5,7 @@ from PagesProject.HomePage import HomePage
 @allure.feature('search')
 @allure.story('US-SEARCH')
 @allure.description('Chercher un produit existant')
-def test_Connexion_avec_champs_vides(setup):
+def test_chercher_un_produit_existant(setup):
     '''Chercher un produit existant'''
     home_page = HomePage(setup)
 

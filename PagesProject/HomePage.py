@@ -13,7 +13,7 @@ class HomePage(BasePage):
         self.barre_de_recherche = self.page.locator('#search-query')
         self.bouton_rechercher = self.page.get_by_role("button", name="Rechercher ")
         self.article_rechercher = self.page.locator('//span[normalize-space()="hammer"]')
-
+        self.message_no_results = self.page.locator("//div[@data-test='no-results']")
 
     #methodes
 
@@ -33,3 +33,5 @@ class HomePage(BasePage):
     def verifier_que_larticle_rechercher_est_visible(self, article):
         expect(self.article_rechercher).to_have_text(article)
 
+    def verifier_la_presence_du_message_aucun_produit_trouve(self):
+        expect(self.message_no_results).to_have_text("Aucun produit trouvé.")
