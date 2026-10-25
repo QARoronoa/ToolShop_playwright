@@ -14,6 +14,7 @@ class HomePage(BasePage):
         self.bouton_rechercher = self.page.get_by_role("button", name="Rechercher ")
         self.article_rechercher = self.page.locator('//span[normalize-space()="hammer"]')
         self.message_no_results = self.page.locator("//div[@data-test='no-results']")
+        # self.checkbox_categorie = self.page.get_by_role("checkbox", name={name})
 
     #methodes
 
@@ -38,3 +39,13 @@ class HomePage(BasePage):
 
     def ouvrir_fiche_produit(self, article):
         self.page.locator('.card-body', has_text=article).click()
+
+    def cocher_une_categorie(self, name):
+        categorie = self.page.get_by_role("checkbox", name=name)
+        categorie.click()
+        expect(categorie).to_be_checked()
+
+    def decocher_une_categorie(self, name):
+        categorie = self.page.get_by_role("checkbox", name=name)
+        categorie.uncheck()
+        expect(categorie).not_to_be_checked()
