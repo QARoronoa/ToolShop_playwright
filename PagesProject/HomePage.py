@@ -14,7 +14,7 @@ class HomePage(BasePage):
         self.bouton_rechercher = self.page.get_by_role("button", name="Rechercher ")
         self.article_rechercher = self.page.locator('//span[normalize-space()="hammer"]')
         self.message_no_results = self.page.locator("//div[@data-test='no-results']")
-        # self.checkbox_categorie = self.page.get_by_role("checkbox", name={name})
+        self.prix_article = self.page.locator('span[data-test="product-price"]')
 
     #methodes
 
@@ -49,3 +49,12 @@ class HomePage(BasePage):
         categorie = self.page.get_by_role("checkbox", name=name)
         categorie.uncheck()
         expect(categorie).not_to_be_checked()
+
+    def trier_par_prix_croissant(self):
+        self.page.select_option('//select[@data-test="sort"]', value="price,asc")
+
+    def verifier_le_trix(self, numero, prix_attendu):
+        prix = self.prix_article.nth(numero)
+        expect(prix).to_have_text(prix_attendu)
+        print(prix_attendu)
+

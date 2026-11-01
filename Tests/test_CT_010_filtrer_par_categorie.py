@@ -5,7 +5,7 @@ from PagesProject.HomePage import HomePage
 @allure.feature('Filter')
 @allure.story('US-FILTER')
 @allure.description('Filtrer les produits par categories')
-def test_ouvrir_fiche_produit(setup):
+def test_filtrer_par_categorie(setup):
     '''Filtrer les produits par categories'''
     home_page = HomePage(setup)
 
