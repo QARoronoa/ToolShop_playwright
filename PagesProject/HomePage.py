@@ -53,6 +53,8 @@ class HomePage(BasePage):
     def trier_par_prix_croissant(self):
         self.page.select_option('//select[@data-test="sort"]', value="price,asc")
 
+    def trier_par_prix_decroissant(self):
+        self.page.select_option('//select[@data-test="sort"]', value="price,desc")
     def verifier_le_trix(self, numero, prix_attendu):
         prix = self.prix_article.nth(numero)
         expect(prix).to_have_text(prix_attendu)

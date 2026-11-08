@@ -5,7 +5,7 @@ from PagesProject.HomePage import HomePage
 @allure.feature('Sort')
 @allure.story('US-SORT')
 @allure.description('Tri des produits par prix croissant')
-def test_filtrer_par_categorie(setup):
+def test_filtrer_par_prix_croissant(setup):
     '''Tri des produits par prix croissant'''
     home_page = HomePage(setup)
 
