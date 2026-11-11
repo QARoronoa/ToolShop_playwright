@@ -15,6 +15,8 @@ class HomePage(BasePage):
         self.article_rechercher = self.page.locator('//span[normalize-space()="hammer"]')
         self.message_no_results = self.page.locator("//div[@data-test='no-results']")
         self.prix_article = self.page.locator('span[data-test="product-price"]')
+        self.bouton_accueil = self.page.get_by_role("link", name="Accueil")
+        self.bouton_panier = self.page.locator('a[aria-label="cart"]')
 
     #methodes
 
@@ -59,4 +61,10 @@ class HomePage(BasePage):
         prix = self.prix_article.nth(numero)
         expect(prix).to_have_text(prix_attendu)
         print(prix_attendu)
+
+    def cliquer_sur_le_bouton_accueil(self):
+        self.cliquer_sur_un_element(self.bouton_accueil)
+
+    def cliquer_sur_le_bouton_panier(self):
+        self.cliquer_sur_un_element(self.bouton_panier)
 
